@@ -1,6 +1,6 @@
 //
 //  BaseModel.swift
-//  TodoList
+//  HockeyInfoCoreData
 //
 //  Created by Larry Burris on 02/14/22.
 //  Copyright © 2022 Larry Burris. All rights reserved.
