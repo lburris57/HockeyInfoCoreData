@@ -15,7 +15,7 @@ struct HockeyInfoCoreDataApp: App
     {
         WindowGroup
         {
-            TeamTabView()
+            MainMenuView()
             .environment(\.managedObjectContext, persistentContainer.viewContext)
             .onAppear
             {

@@ -39,6 +39,7 @@
 		9132CD8027F2ADE900AC253A /* NHLScheduledGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9132CD7F27F2ADE900AC253A /* NHLScheduledGame.swift */; };
 		9132CD8227F2AEC600AC253A /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9132CD8127F2AEC600AC253A /* Venue.swift */; };
 		9132CD8827F3DE5A00AC253A /* DataConversionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9132CD8727F3DE5900AC253A /* DataConversionHelper.swift */; };
+		9196F50A285B056D00FF45A6 /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9196F509285B056D00FF45A6 /* MainMenuView.swift */; };
 		91E8ADB327EBCC290041277F /* PlayedStatusEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E8ADAD27EBCC290041277F /* PlayedStatusEnum.swift */; };
 		91E8ADB427EBCC290041277F /* ConferenceEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E8ADAE27EBCC290041277F /* ConferenceEnum.swift */; };
 		91E8ADB527EBCC290041277F /* DivisionEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E8ADAF27EBCC290041277F /* DivisionEnum.swift */; };
@@ -120,6 +121,7 @@
 		9132CD7F27F2ADE900AC253A /* NHLScheduledGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NHLScheduledGame.swift; path = ../../../HockeyInfoDatabase/HockeyInfoDatabase/PresentationModels/NHLScheduledGame.swift; sourceTree = "<group>"; };
 		9132CD8127F2AEC600AC253A /* Venue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
 		9132CD8727F3DE5900AC253A /* DataConversionHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataConversionHelper.swift; sourceTree = "<group>"; };
+		9196F509285B056D00FF45A6 /* MainMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
 		91E8ADAD27EBCC290041277F /* PlayedStatusEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayedStatusEnum.swift; sourceTree = "<group>"; };
 		91E8ADAE27EBCC290041277F /* ConferenceEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConferenceEnum.swift; sourceTree = "<group>"; };
 		91E8ADAF27EBCC290041277F /* DivisionEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DivisionEnum.swift; sourceTree = "<group>"; };
@@ -245,11 +247,11 @@
 			isa = PBXGroup;
 			children = (
 				91E8ADAD27EBCC290041277F /* PlayedStatusEnum.swift */,
-				91E8ADC827EFD1F10041277F /* ScoresView.swift */,
 				91E8ADAE27EBCC290041277F /* ConferenceEnum.swift */,
 				91E8ADAF27EBCC290041277F /* DivisionEnum.swift */,
 				91E8ADB027EBCC290041277F /* PeriodEnum.swift */,
 				91E8ADB127EBCC290041277F /* PositionEnum.swift */,
+				91E8ADC827EFD1F10041277F /* ScoresView.swift */,
 				91E8ADB227EBCC290041277F /* PlayingProbabilityEnum.swift */,
 			);
 			path = Enums;
@@ -283,6 +285,7 @@
 				9132CD5C27F15CF400AC253A /* TeamNavLinkView.swift */,
 				91E8ADC927EFD1F10041277F /* ScheduleView.swift */,
 				91E8ADCA27EFD1F10041277F /* TeamView.swift */,
+				9196F509285B056D00FF45A6 /* MainMenuView.swift */,
 				91E8ADCB27EFD1F10041277F /* ContentView.swift */,
 			);
 			path = Views;
@@ -456,6 +459,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				91E8ADB327EBCC290041277F /* PlayedStatusEnum.swift in Sources */,
+				9196F50A285B056D00FF45A6 /* MainMenuView.swift in Sources */,
 				9132CD5427F1588300AC253A /* PlayerInjuries.swift in Sources */,
 				9132CD6E27F27F3600AC253A /* ScoringSummary.swift in Sources */,
 				91FF1C1527DEC2B5008ED98F /* BaseModel.swift in Sources */,
