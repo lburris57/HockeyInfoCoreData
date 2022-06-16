@@ -8,6 +8,8 @@ import SwiftUI
 
 struct ScheduleView: View
 {
+    @StateObject var seasonScheduleViewModel = SeasonScheduleViewModel()
+    
     @State var dateValue = Date()
     
     var body: some View
@@ -17,9 +19,12 @@ struct ScheduleView: View
             VStack(alignment: .leading, spacing: 0)
             {
                 DatePicker("Choose a date:",
-                        selection: $dateValue,
+                           selection: $dateValue,
                         displayedComponents: .date)
                     .datePickerStyle(.graphical)
+                    .onTapGesture {
+                        seasonScheduleViewModel.selectedDate = formatDate(dateValue)
+                    }
                 
                 Text("Scheduled games for \(formatDate(dateValue))")
                     .font(.subheadline).bold()

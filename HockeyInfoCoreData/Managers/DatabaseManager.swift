@@ -12,6 +12,24 @@ class DatabaseManager
     let persistentContainer = CoreDataManager.shared.persistentContainer
     let viewContext = CoreDataManager.shared.persistentContainer.viewContext
     
+    /*
+        The following is a listing of each database table with a description detailing how often it should be updated and linked, if necessary.
+        Otherwise, simply return the requested data directly from the database.
+     
+        NOTE: Check the last updated date of the tables and adjust the date range as necessary using the TimeAndDateUtils.
+     
+        ScheduleEntity - Once per day after all games have been completed.  No linking required.
+        ScoringSummaryEntity - Once per day after all games have been completed and/or each time query is performed when a game is in progress.
+        PeriodScoringDataEntity - Same as ScoringSummaryEntity. Link with ScoringSummaryEntity.
+        GameLogEntity - Once per day after all games have been completed.  Link with TeamEntity.
+        PlayerEntity - Once per day after all games have been completed.
+        PlayerStatisticsEntity - Once per day after all games have been completed.  Link with PlayerEntity.
+        PlayerInjuryEntity - Once per day after all games have been completed.  Link with PlayerEntity.
+        TeamEntity - Once per day after all games have been completed.
+        TeamStandingsEntity - Once per day after all games have been completed.  Link with TeamEntity.
+        TeamStatisticsEntity - Once per day after all games have been completed.  Link with TeamEntity.
+     */
+    
     // MARK: -
     // MARK: Retrieval Functions
     func retrieveAllGames() -> [ScheduleEntity]
