@@ -36,7 +36,6 @@ struct APIService
             //  Verify that the response is valid and the status code 200
             guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else
             {
-            
                 throw APIError.invalidResponseStatus
             }
             

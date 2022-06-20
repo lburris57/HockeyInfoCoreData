@@ -12,6 +12,10 @@ struct Constants
     static let EMPTY_STRING = ""
     static let ZERO: Int = 0
     
+    //  Time constants
+    static let SECONDS_PER_DAY = 86400
+    static let DAYS_PER_MONTH = 30.333
+    
     static let SYSTEM: String = "System"
     
     static let USER_NAME_KEY: String = "userName"

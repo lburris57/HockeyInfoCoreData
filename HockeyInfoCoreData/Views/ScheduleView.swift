@@ -22,9 +22,9 @@ struct ScheduleView: View
                            selection: $dateValue,
                         displayedComponents: .date)
                     .datePickerStyle(.graphical)
-                    .onTapGesture {
-                        seasonScheduleViewModel.selectedDate = formatDate(dateValue)
-                    }
+//                    .onTapGesture {
+//                        //seasonScheduleViewModel.selectedDate = formatDate(dateValue)
+//                    }
                 
                 Text("Scheduled games for \(formatDate(dateValue))")
                     .font(.subheadline).bold()

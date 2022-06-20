@@ -65,6 +65,36 @@ extension Date
         let currentDateString = monthFormatter.string(from: Date())
         return dateString == currentDateString
     }
+    
+    // Returns a DateComponent value with number of days away from a specified date
+    var daysBeforeNow: DateComponents
+    {
+        let now = Date()
+        let formatter = DateFormatter()
+        formatter.timeZone = TimeZone.current
+        formatter.dateFormat = "MMMM dd, yyyy"
+        
+        return Calendar.current.dateComponents([.day], from: self, to: now)
+    }
+    
+    // Returns a DateComponent value with number of days away from a specified date
+    var daysSinceNow: DateComponents
+    {
+        let now = Date()
+        let formatter = DateFormatter()
+        formatter.timeZone = TimeZone.current
+        formatter.dateFormat = "MMMM dd, yyyy"
+        
+        return Calendar.current.dateComponents([.day], from: now, to: self)
+    }
+    
+    func getTextFromDate() -> String
+    {
+        let formatter = DateFormatter()
+        formatter.locale = .current
+        formatter.dateFormat = "EEEE, MMM d, yyyy"
+        return formatter.string(from: self)
+    }
 }
 
 extension String
@@ -87,6 +117,22 @@ extension String
         }
         
         return data.base64EncodedString(options: Data.Base64EncodingOptions(rawValue: 0))
+    }
+    
+    var asDate: Date
+    {
+        let formatter = DateFormatter()
+        
+        formatter.dateFormat = "MMMM dd, yyyy"
+        
+        return formatter.date(from: self) ?? Date()
+    }
+    
+    func getSubstring(from value: String, atIndex offset: Int) -> String
+    {
+        let range = value.index(value.startIndex, offsetBy: offset)..<value.endIndex
+        
+        return String(value[range])
     }
 }
 
