@@ -70,10 +70,10 @@ struct DivisionTeamView: View
     }
 }
 
-//struct TeamView_Previews: PreviewProvider
-//{
-//    static var previews: some View
-//    {
-//        DivisionTeamView()
-//    }
-//}
+struct DivisionTeamView_Previews: PreviewProvider
+{
+    static var previews: some View
+    {
+        DivisionTeamView()
+    }
+}

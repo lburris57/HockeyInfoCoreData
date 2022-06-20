@@ -29,7 +29,7 @@ struct MainMenuView : View
                 {
                     HStack
                     {
-                        Image("teamInformationCategory").resizable().frame(width: 45, height: 45).aspectRatio(contentMode: .fit)
+                        Image("info").resizable().frame(width: 45, height: 45).aspectRatio(contentMode: .fit)
                         
                         Text("Team Information List")
                     }
@@ -39,7 +39,7 @@ struct MainMenuView : View
                 {
                     HStack
                     {
-                        Image("puck-fire").resizable().frame(width: 45, height: 45).aspectRatio(contentMode: .fit)
+                        Image("positioning").resizable().frame(width: 45, height: 45).aspectRatio(contentMode: .fit)
                         
                         Text("Standings")
                     }
@@ -89,7 +89,7 @@ struct MainMenuView : View
                 {
                     HStack
                     {
-                        Image("skateToFace").resizable().frame(width: 45, height: 45).aspectRatio(contentMode: .fit)
+                        Image("first-aid-bag").resizable().frame(width: 45, height: 45).aspectRatio(contentMode: .fit)
                         
                         Text("Player Injuries")
                     }
@@ -99,7 +99,7 @@ struct MainMenuView : View
                 {
                     HStack
                     {
-                        Image("settingsCategory").resizable().frame(width: 45, height: 45).aspectRatio(contentMode: .fit)
+                        Image("gear-2").resizable().frame(width: 45, height: 45).aspectRatio(contentMode: .fit)
                         
                         Text("Season Settings")
                     }

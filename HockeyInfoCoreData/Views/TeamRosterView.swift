@@ -22,37 +22,14 @@ struct TeamRosterView : View
         {
             Text("\(teamItem.teamName)").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/).bold().padding(.top)
             
-//            List
-//            {
-//                //if let players =  playersArray  //teamInfo.teamDictionary[teamItem.teamId]?.players
-//            Section(header: Text("Forwards").font(.headline).foregroundColor(.black))
-//            {
-//                ForEach(playersArray, id:\.self)
-//                {
-//                    player in
-//
-//                    if player.position == PositionEnum.leftWing.rawValue || player.position == PositionEnum.center.rawValue || player.position == PositionEnum.rightWing.rawValue
-//                    {
-//                        NavigationLink(destination: Text("Player detail view for selected skater goes here..."))
-//                        {
-//                            HStack
-//                            {
-//                                Text("\(player.position)")
-//                                Text("\(player.jerseyNumber)")
-//                                Text("\(player.firstName) \(player.lastName)")
-//                            }
-//                        }
-//                    }
-//                }
-//            }.padding(.top)
-            
-            
+            List
+            {
 //                skaterSection
 //
 //                defensemanSection
 //
 //                goalieSection
-//            }
+            }
         }.navigationBarTitle(Text("Roster Players for \(teamItem.teamName)"), displayMode: .inline)
     }
     

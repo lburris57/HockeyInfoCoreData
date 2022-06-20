@@ -38,7 +38,7 @@ struct GameLogView : View
     
     func getSelectedView(_ selection: Int) -> AnyView
     {
-        return selection == 0 ? AnyView(Text("Games Remaining View goes here...")) : AnyView(Text("Completed Games View goes here..."))
+        return selection == 0 ? AnyView(Text("Remaining Games View goes here...")) : AnyView(Text("Completed Games View goes here..."))
     }
 }
 

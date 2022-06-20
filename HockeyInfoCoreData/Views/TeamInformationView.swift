@@ -19,23 +19,33 @@ struct TeamInformationView : View
         {
             Text("RosterView goes here...").tabItem
             {
-                Label("Roster", systemImage: "person.3")
+                Image("user-group-icon")
+                
+                Text("Roster")
             }
             TeamStatsView(teamItem: teamItem).tabItem
             {
-                Label("Stats", systemImage: "list.clipboard.fill")
+                Image("stats")
+                
+                Text("Stats")
             }
             Text("InjuriesView goes here...").tabItem
             {
-                Label("Injuries", systemImage: "figure.fall")
+                Image("first_aid_kit-4")
+
+                Text("Injuries")
             }
             GameLogView(teamItem: TeamItem.allTeamItems()[5]).tabItem
             {
-                Label("Game Log", systemImage: "scroll.fill")
+                Image("history")
+                
+                Text("Game Log")
             }
             VenueView(venue: Venue.allVenues()[29]).tabItem
             {
-                Label("Venue", systemImage: "building.columns.fill")
+                Image("Library-icon")
+                
+                Text("Venue")
             }
         }.edgesIgnoringSafeArea(.bottom)
     }
