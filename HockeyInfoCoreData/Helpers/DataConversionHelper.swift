@@ -48,4 +48,40 @@ struct DataConversionHelper
         
         return (scheduledEntities, scheduledGames)
     }
+    
+    static func convertSeasonalPlayersToPlayerEntitiesAndPlayers(_ seasonalPlayers: SeasonalPlayers) -> ([PlayerEntity], [Player])
+    {
+        var playerEntities = [PlayerEntity]()
+        var playerModels = [Player]()
+        
+        let players = seasonalPlayers.players
+        
+        for player in players
+        {
+            let playerEntity = PlayerEntity(context: context)
+            
+            playerEntity.dateCreated = Date()
+            playerEntity.lastUpdated = seasonalPlayers.lastUpdatedOn
+            playerEntity.teamId = Int16(player.player.currentTeam?.id ?? 0)
+            playerEntity.birthCity = player.player.birthCity
+            playerEntity.birthCountry = player.player.birthCountry
+            playerEntity.birthDate = player.player.birthDate
+            playerEntity.firstName = player.player.firstName
+            playerEntity.lastName = player.player.lastName
+            playerEntity.height = player.player.height
+            playerEntity.weight = String(player.player.weight ?? 0)
+            playerEntity.imageURL = player.player.officialImageSrc?.absoluteString
+            playerEntity.jerseyNumber = String(player.player.jerseyNumber ?? 0)
+            playerEntity.playerId = Int16(player.player.id)
+            playerEntity.position = player.player.primaryPosition
+            playerEntity.shoots = player.player.handedness.shoots
+            
+            
+            playerEntities.append(playerEntity)
+        }
+        
+        playerModels = playerEntities.map(Player.init)
+        
+        return (playerEntities, playerModels)
+    }
 }

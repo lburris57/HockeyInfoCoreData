@@ -17,6 +17,8 @@
 		9103D396285D0675008B80EC /* MainMenuRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9103D390285D0675008B80EC /* MainMenuRow.swift */; };
 		9103D398285D09DB008B80EC /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9103D397285D09DB008B80EC /* SettingsView.swift */; };
 		9103D39A285D0A4E008B80EC /* UserSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9103D399285D0A4E008B80EC /* UserSettingsViewModel.swift */; };
+		911BCC04286120380010F0AD /* TextInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911BCC03286120380010F0AD /* TextInputField.swift */; };
+		911BCC08286144B80010F0AD /* SeasonalPlayersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911BCC07286144B80010F0AD /* SeasonalPlayersViewModel.swift */; };
 		9132CD3D27F14F0200AC253A /* NHLTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9132CD3C27F14F0200AC253A /* NHLTeam.swift */; };
 		9132CD4127F157FB00AC253A /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9132CD4027F157FB00AC253A /* APIService.swift */; };
 		9132CD4C27F1588300AC253A /* SeasonalGames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9132CD4227F1588200AC253A /* SeasonalGames.swift */; };
@@ -114,6 +116,8 @@
 		9103D390285D0675008B80EC /* MainMenuRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuRow.swift; sourceTree = "<group>"; };
 		9103D397285D09DB008B80EC /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		9103D399285D0A4E008B80EC /* UserSettingsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettingsViewModel.swift; sourceTree = "<group>"; };
+		911BCC03286120380010F0AD /* TextInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputField.swift; sourceTree = "<group>"; };
+		911BCC07286144B80010F0AD /* SeasonalPlayersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonalPlayersViewModel.swift; sourceTree = "<group>"; };
 		9132CD3C27F14F0200AC253A /* NHLTeam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NHLTeam.swift; sourceTree = "<group>"; };
 		9132CD4027F157FB00AC253A /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		9132CD4227F1588200AC253A /* SeasonalGames.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeasonalGames.swift; sourceTree = "<group>"; };
@@ -322,6 +326,7 @@
 			isa = PBXGroup;
 			children = (
 				9103D397285D09DB008B80EC /* SettingsView.swift */,
+				911BCC03286120380010F0AD /* TextInputField.swift */,
 				9103D388285D011D008B80EC /* GameLogView.swift */,
 				9103D386285CED05008B80EC /* TeamInformationView.swift */,
 				918CD8AD285C02DA00043790 /* MapView.swift */,
@@ -436,6 +441,7 @@
 				91E8ADD027EFD6030041277F /* TeamViewModel.swift */,
 				9132CD6827F1763900AC253A /* SeasonScheduleViewModel.swift */,
 				91FF1C6627E00F13008ED98F /* TeamsViewModel.swift */,
+				911BCC07286144B80010F0AD /* SeasonalPlayersViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -585,6 +591,7 @@
 				9103D395285D0675008B80EC /* ScoresRow.swift in Sources */,
 				91E8ADCF27EFD1F10041277F /* ContentView.swift in Sources */,
 				9132CD7427F2965600AC253A /* PlayerInjury.swift in Sources */,
+				911BCC08286144B80010F0AD /* SeasonalPlayersViewModel.swift in Sources */,
 				91FF1C5B27DEDF46008ED98F /* PlayerInjuryEntity+CoreDataProperties.swift in Sources */,
 				9132CD4D27F1588300AC253A /* PlayerGameLogsForDate.swift in Sources */,
 				9103D39A285D0A4E008B80EC /* UserSettingsViewModel.swift in Sources */,
@@ -594,6 +601,7 @@
 				9132CD7227F2920B00AC253A /* PlayerStatistics.swift in Sources */,
 				9132CD4E27F1588300AC253A /* GameBoxScore.swift in Sources */,
 				9103D389285D011D008B80EC /* GameLogView.swift in Sources */,
+				911BCC04286120380010F0AD /* TextInputField.swift in Sources */,
 				91FF1C5D27DEDF46008ED98F /* PeriodScoringDataEntity+CoreDataProperties.swift in Sources */,
 				91FF1C6027DEDF46008ED98F /* TeamEntity+CoreDataClass.swift in Sources */,
 				9132CD7E27F2A94000AC253A /* Player.swift in Sources */,

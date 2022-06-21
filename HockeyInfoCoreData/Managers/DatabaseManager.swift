@@ -12,6 +12,18 @@ class DatabaseManager
     let persistentContainer = CoreDataManager.shared.persistentContainer
     let viewContext = CoreDataManager.shared.persistentContainer.viewContext
     
+    //  Fetch Requests
+    let scheduledEntityFetchRequest = ScheduleEntity.fetchRequest()
+    let scoringSummaryEntityFetchRequest = ScoringSummaryEntity.fetchRequest()
+    let periodScoringDataEntityFetchRequest = PeriodScoringDataEntity.fetchRequest()
+    let gameLogEntityFetchRequest = GameLogEntity.fetchRequest()
+    let playerEntityFetchRequest = PlayerEntity.fetchRequest()
+    let playerStatisticsEntityFetchRequest = PlayerStatisticsEntity.fetchRequest()
+    let playerInjuryEntityFetchRequest = PlayerInjuryEntity.fetchRequest()
+    let teamEntityFetchRequest = TeamEntity.fetchRequest()
+    let teamStandingsEntityFetchRequest = TeamStandingsEntity.fetchRequest()
+    let teamStatisticsFetchRequest = TeamStatisticsEntity.fetchRequest()
+    
     /*
         The following is a listing of each database table with a description detailing how often it should be updated and linked, if necessary.
         Otherwise, simply return the requested data directly from the database.
@@ -30,21 +42,64 @@ class DatabaseManager
         TeamStatisticsEntity - Once per day after all games have been completed.  Link with TeamEntity.
      */
     
+    /*
+        This is a list of functions that need to be included in the DatabaseManager code:
+     
+        saveScheduleEntities(_ scheduledEntities: [ScheduleEntity], )
+        retrieveFullSeasonSchedule() -> [ScheduleEntity]
+        retrieveScheduleEntitiesByDate(_ date: Date) -> [ScheduleEntity]
+        retrieveScheduleEntitiesByDateRange(_ beginDate: Date, endDate: Date) -> [ScheduleEntity]
+     
+        saveTeamEntities(_ teamEntities: [TeamEntity])
+        retrieveAllTeamEntities() -> [TeamEntity]
+        retrieveTeamEntityById(_ teamId: String) -> TeamEntity
+     
+        saveTeamStatisticsEntities(_ teamStatisticsEntities: [TeamStatisticsEntity])
+        retrieveAllTeamStatisticsEntities() -> [TeamStatisticsEntity]
+        retrieveTeamStatisticsEntityById(_ teamId: String) -> TeamStatisticsEntity
+     
+        saveTeamStandingsEntities(_ teamStandingsEntities: [TeamStandingsEntity])
+        retrieveAllTeamStandingsEntities() -> [TeamStandingsEntity]
+        retrieveTeamStandingsEntityById(_ teamId: String) -> TeamStandingsEntity
+     
+        savePlayers(_ playerEntities: [PlayerEntity])
+        retrieveAllPlayerEntities() -> [PlayerEntity]
+        retrievePlayerEntityById(_ playerId: String) -> PlayerEntity
+     
+        savePlayerStatisticsEntities(_ playerStatisticsEntities: [PlayerStatisticsEntity])
+        retrieveAllPlayerStatisticsEntities() -> [PlayerStatisticsEntity]
+        retrievePlayerStatisticsEntityById(_ playerId: String) -> PlayerStatisticsEntity
+     
+        savePlayerInjuryEntities(_ playerInjuryEntities: [PlayerInjuryEntity])
+        retrieveAllPlayerInjuryEntities() -> [PlayerInjuryEntity]
+        retrievePlayerInjuryEntitiesByDate(_ date: Date) -> [PlayerInjuryEntity]
+        retrievePlayerInjuryEntitiesByDateRange(_ beginDate: Date, endDate: Date) -> [PlayerInjuryEntity]
+     
+        saveGameLogEntities(_ gameLogEntities: [GameLogEntity])
+        retrieveAllGameLogEntities() -> [GameLogEntity]
+        retrieveGameLogEntitiesByDate(_ date: Date) -> [GameLogEntity]
+        retrieveGameLogEntitiesByDateRange(_ beginDate: Date, endDate: Date) -> [GameLogEntity]
+     
+        saveScoringSummaryEntities(_ scoringSummaryEntities: [scoringSummaryEntity])
+        retrieveAllScoringSummaryEntities() -> [scoringSummaryEntity]
+        retrieveScoringSummaryEntitiesByDate(_ date: Date) -> [scoringSummaryEntity]
+        retrieveScoringSummaryEntitiesByDateRange(_ beginDate: Date, endDate: Date) -> [scoringSummaryEntity]
+     
+     */
+    
     // MARK: -
     // MARK: Retrieval Functions
     func retrieveAllGames() -> [ScheduleEntity]
     {
         var games: [ScheduleEntity] = []
         
-        let request = NSFetchRequest<ScheduleEntity>(entityName: "ScheduleEntity")
-        
         let sort = NSSortDescriptor(keyPath: \ScheduleEntity.date, ascending: true)
         
-        request.sortDescriptors = [sort]
+        scheduledEntityFetchRequest.sortDescriptors = [sort]
         
         do
         {
-            try games = viewContext.fetch(request)
+            try games = viewContext.fetch(scheduledEntityFetchRequest)
         }
         catch
         {
@@ -58,15 +113,13 @@ class DatabaseManager
     {
         var teams: [TeamEntity] = []
         
-        let request = NSFetchRequest<TeamEntity>(entityName: "TeamEntity")
-        
         let sort = NSSortDescriptor(keyPath: \TeamEntity.name, ascending: true)
         
-        request.sortDescriptors = [sort]
+        teamEntityFetchRequest.sortDescriptors = [sort]
         
         do
         {
-            try teams = viewContext.fetch(request)
+            try teams = viewContext.fetch(teamEntityFetchRequest)
         }
         catch
         {
@@ -80,15 +133,13 @@ class DatabaseManager
     {
         var players: [PlayerEntity] = []
         
-        let request = NSFetchRequest<PlayerEntity>(entityName: "PlayerEntity")
-        
         let sort = NSSortDescriptor(keyPath: \PlayerEntity.lastName, ascending: true)
         
-        request.sortDescriptors = [sort]
+        playerEntityFetchRequest.sortDescriptors = [sort]
         
         do
         {
-            try players = viewContext.fetch(request)
+            try players = viewContext.fetch(playerEntityFetchRequest)
         }
         catch
         {
@@ -102,15 +153,13 @@ class DatabaseManager
     {
         var playerInjuries: [PlayerInjuryEntity] = []
         
-        let request = NSFetchRequest<PlayerInjuryEntity>(entityName: "PlayerInjuryEntity")
-        
         let sort = NSSortDescriptor(keyPath: \PlayerInjuryEntity.lastName, ascending: true)
         
-        request.sortDescriptors = [sort]
+        playerInjuryEntityFetchRequest.sortDescriptors = [sort]
         
         do
         {
-            try playerInjuries = viewContext.fetch(request)
+            try playerInjuries = viewContext.fetch(playerInjuryEntityFetchRequest)
         }
         catch
         {
@@ -120,19 +169,17 @@ class DatabaseManager
         return playerInjuries
     }
     
-    func retrieveAllTeamStatistics() -> [TeamStatisticsEntity]
+    func retrieveAllTeamStatistics(_ sortDescriptors: [NSSortDescriptor]) -> [TeamStatisticsEntity]
     {
         var teamStatistics: [TeamStatisticsEntity] = []
         
-        let request = NSFetchRequest<TeamStatisticsEntity>(entityName: "TeamStatisticsEntity")
-        
         let sort = NSSortDescriptor(keyPath: \TeamStatisticsEntity.abbreviation, ascending: true)
         
-        request.sortDescriptors = [sort]
+        teamStatisticsFetchRequest.sortDescriptors = [sort]
         
         do
         {
-            try teamStatistics = viewContext.fetch(request)
+            try teamStatistics = viewContext.fetch(teamStatisticsFetchRequest)
         }
         catch
         {
@@ -165,5 +212,10 @@ class DatabaseManager
     func saveScheduleEntities(_ scheduledEntities: [ScheduleEntity]) throws
     {
         ScheduleEntity().save()
+    }
+    
+    func savePlayerEntities(_ playerEntities: [PlayerEntity]) throws
+    {
+        PlayerEntity().save()
     }
 }

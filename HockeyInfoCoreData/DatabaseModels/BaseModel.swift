@@ -23,26 +23,32 @@ extension BaseModel
         return CoreDataManager.shared.persistentContainer.viewContext
     }
     
+    //  Saves the entire viewContext and rolls back if there are any errors
     func save()
     {
-        do
+        if Self.viewContext.hasChanges
         {
-            try Self.viewContext.save()
-        }
-        catch
-        {
-            CoreDataManager.shared.persistentContainer.viewContext.rollback()
-            
-            Log.error("Error saving data: \(error.localizedDescription)")
+            do
+            {
+                try Self.viewContext.save()
+            }
+            catch
+            {
+                CoreDataManager.shared.persistentContainer.viewContext.rollback()
+                
+                Log.error("Error saving data: \(error.localizedDescription)")
+            }
         }
     }
     
+    //  Deletes the existing object
     func delete()
     {
         Self.viewContext.delete(self)
         save()
     }
     
+    //  Retrieve all objects without sorting
     static func all<T>() -> [T] where T: NSManagedObject
     {
         let fetchRequest: NSFetchRequest<T> = NSFetchRequest(entityName: String(describing: T.self))
@@ -59,6 +65,26 @@ extension BaseModel
         }
     }
     
+    //  Retrieve all objects using sort descriptors
+    static func allWithSort<T>(_ sortDescriptors: [NSSortDescriptor]) -> [T] where T: NSManagedObject
+    {
+        let fetchRequest: NSFetchRequest<T> = NSFetchRequest(entityName: String(describing: T.self))
+        
+        fetchRequest.sortDescriptors = sortDescriptors
+        
+        do
+        {
+            return try viewContext.fetch(fetchRequest)
+        }
+        catch
+        {
+            Log.error("Error retrieving all \(T.self) objects: \(error.localizedDescription)")
+            
+            return []
+        }
+    }
+    
+    //  Retrieve an object by the objectId
     static func byId<T>(id: NSManagedObjectID) -> T? where T: NSManagedObject
     {
         do
