@@ -22,7 +22,7 @@ class SeasonScheduleViewModel: ObservableObject
     func evaluateDataSource() async
     {
         //  Check database to see if scheduled game data has been saved/updated already, otherwise retrieve data from the web service
-        if DatabaseManager().scheduledGamesRequiresSaving(selectedDate)
+        if DatabaseManager().scheduledGamesRequireSaving(selectedDate)
         {
             await fetchDataFromWebService()
         }
@@ -53,12 +53,12 @@ class SeasonScheduleViewModel: ObservableObject
             //  The season object contains all of the scheduled games data
             if let season = try await apiService.getJSON() as SeasonalGames?
             {
-                //  Convert the decoded JSON object into an NHLScheduledGame database object array
+                //  Convert the decoded JSON object into an ScheduleEntity and ScheduledGame arrays
                 (scheduledEntities, scheduledGames) = DataConversionHelper.convertSeasonToScheduleEntitiesAndScheduledGames(season)
                 
                 filterScheduledGamesBySelectedDate()
                 
-                //  Save the data to the database on a background thread
+                //  Save the scheduledEntities to the database on a background thread
                 DispatchQueue.global(qos: .userInitiated).async
                 {
                     do

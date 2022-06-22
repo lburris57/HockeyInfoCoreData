@@ -203,8 +203,6 @@ class TimeAndDateUtils
         date > Date() ? true : false
     }
     
-    //------------New code
-    
     static func formattedYYYYMMDDDateStringToDDMMYYYY(dateString: String) -> String?
     {
         let inputFormatter = DateFormatter()
@@ -232,7 +230,7 @@ class TimeAndDateUtils
         }
         else
         {
-            return Constants.S2018_2019
+            return Constants.S2021_2022
         }
     }
     
@@ -247,7 +245,7 @@ class TimeAndDateUtils
         }
         else
         {
-            return "2019"
+            return "2022"
         }
     }
     

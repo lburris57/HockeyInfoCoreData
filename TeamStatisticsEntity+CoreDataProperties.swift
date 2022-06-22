@@ -35,6 +35,7 @@ extension TeamStatisticsEntity
     @NSManaged public var penalties: Int16
     @NSManaged public var penaltyMinutes: Int16
     @NSManaged public var hits: Int16
+    @NSManaged public var faceOffs: Int16
     @NSManaged public var faceOffWins: Int16
     @NSManaged public var faceOffLosses: Int16
     @NSManaged public var faceOffPercent: Double

@@ -20,7 +20,7 @@ class SeasonalPlayersViewModel
     @MainActor
     func evaluateDataSource() async
     {
-        if true // always retrieves player data
+        if DatabaseManager().playersRequireSaving()
         {
             await fetchDataFromWebService()
         }
@@ -49,8 +49,10 @@ class SeasonalPlayersViewModel
         {
             if let seasonalPlayers = try await apiService.getJSON() as SeasonalPlayers?
             {
+                //  Convert the decoded JSON object into PlayerEntity and Player arrays
                 (playerEntities, players) = DataConversionHelper.convertSeasonalPlayersToPlayerEntitiesAndPlayers(seasonalPlayers)
                 
+                //  Save the playerEntities to the database on a background thread
                 DispatchQueue.global(qos: .userInitiated).async
                 {
                     do

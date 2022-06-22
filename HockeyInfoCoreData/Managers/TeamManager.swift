@@ -36,6 +36,20 @@ class TeamManager
         return teamNames[name] ?? "What the hell happened???"
     }
     
+    static func getDivisionByTeamName(_ name: String) -> String
+    {
+        let divisionNames = ["ANA":"Pacific", "ARI":"Central", "BOS":"Atlantic", "BUF":"Atlantic", "CGY":"Pacific", "CAR":"Metropolitan", "CHI":"Central", "COL":"Central", "CBJ":"Metropolitan", "DAL":"Central", "DET":"Atlantic", "EDM":"Pacific", "FLO":"Atlantic", "LAK":"Pacific", "MIN":"Central", "MTL":"Atlantic", "NSH":"Central", "NJD":"Metropolitan", "NYI":"Metropolitan", "NYR":"Metropolitan", "OTT":"Atlantic", "PHI":"Metropolitan", "PIT":"Metropolitan", "SEA":"Pacific", "SJS":"Pacific", "STL":"Central", "TBL":"Atlantic", "TOR":"Atlantic", "VAN":"Pacific", "VGK":"Pacific", "WSH":"Metropolitan", "WPJ":"Central"]
+        
+        return divisionNames[name] ?? "What the hell happened???"
+    }
+    
+    static func getConferenceByTeamName(_ name: String) -> String
+    {
+        let conferenceNames = ["ANA":"Western", "ARI":"Western", "BOS":"Eastern", "BUF":"Eastern", "CGY":"Western", "CAR":"Eastern", "CHI":"Western", "COL":"Western", "CBJ":"Eastern", "DAL":"Western", "DET":"Eastern", "EDM":"Western", "FLO":"Eastern", "LAK":"Western", "MIN":"Western", "MTL":"Eastern", "NSH":"Western", "NJD":"Eastern", "NYI":"Eastern", "NYR":"Eastern", "OTT":"Eastern", "PHI":"Eastern", "PIT":"Eastern", "SEA":"Western", "SJS":"Western", "STL":"Western", "TBL":"Eastern", "TOR":"Eastern", "VAN":"Western", "VGK":"Western", "WSH":"Eastern", "WPJ":"Western"]
+        
+        return conferenceNames[name] ?? "What the hell happened???"
+    }
+    
     static func getIDByTeam(_ name: String) -> Int
     {
         let teamNames = ["ANA":29, "ARI":30, "BOS":11, "BUF":15, "CGY":23, "CAR":3, "CHI":20, "COL":22, "CBJ":19, "DAL":27, "DET":16, "EDM":24, "FLO":4, "LAK":28, "MIN":25, "MTL":14, "NSH":18, "NJD":7, "NYI":8, "NYR":9, "OTT":13, "PHI":6, "PIT":10, "SEA": 143, "SJS":26, "STL":17, "TBL":1, "TOR":12, "VAN":21, "VGK":142, "WSH":5, "WPJ":2]

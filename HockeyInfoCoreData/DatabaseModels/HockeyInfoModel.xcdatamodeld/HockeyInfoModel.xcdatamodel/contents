@@ -210,6 +210,7 @@
         <attribute name="dateCreated" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="faceOffLosses" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="faceOffPercent" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="faceOffs" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="faceOffWins" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="gamesPlayed" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="goalsAgainst" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
@@ -242,6 +243,6 @@
         <element name="ScoringSummaryEntity" positionX="36" positionY="198" width="128" height="179"/>
         <element name="TeamEntity" positionX="-63" positionY="-18" width="128" height="239"/>
         <element name="TeamStandingsEntity" positionX="-18" positionY="171" width="128" height="224"/>
-        <element name="TeamStatisticsEntity" positionX="0" positionY="180" width="128" height="404"/>
+        <element name="TeamStatisticsEntity" positionX="0" positionY="180" width="128" height="419"/>
     </elements>
 </model>

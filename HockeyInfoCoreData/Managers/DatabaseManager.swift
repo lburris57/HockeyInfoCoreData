@@ -93,9 +93,9 @@ class DatabaseManager
     {
         var games: [ScheduleEntity] = []
         
-        let sort = NSSortDescriptor(keyPath: \ScheduleEntity.date, ascending: true)
+        let sortDescriptor = NSSortDescriptor(keyPath: \ScheduleEntity.date, ascending: true)
         
-        scheduledEntityFetchRequest.sortDescriptors = [sort]
+        scheduledEntityFetchRequest.sortDescriptors = [sortDescriptor]
         
         do
         {
@@ -113,9 +113,9 @@ class DatabaseManager
     {
         var teams: [TeamEntity] = []
         
-        let sort = NSSortDescriptor(keyPath: \TeamEntity.name, ascending: true)
+        let sortDescriptor = NSSortDescriptor(keyPath: \TeamEntity.name, ascending: true)
         
-        teamEntityFetchRequest.sortDescriptors = [sort]
+        teamEntityFetchRequest.sortDescriptors = [sortDescriptor]
         
         do
         {
@@ -133,9 +133,9 @@ class DatabaseManager
     {
         var players: [PlayerEntity] = []
         
-        let sort = NSSortDescriptor(keyPath: \PlayerEntity.lastName, ascending: true)
+        let sortDescriptor = NSSortDescriptor(keyPath: \PlayerEntity.lastName, ascending: true)
         
-        playerEntityFetchRequest.sortDescriptors = [sort]
+        playerEntityFetchRequest.sortDescriptors = [sortDescriptor]
         
         do
         {
@@ -153,9 +153,9 @@ class DatabaseManager
     {
         var playerInjuries: [PlayerInjuryEntity] = []
         
-        let sort = NSSortDescriptor(keyPath: \PlayerInjuryEntity.lastName, ascending: true)
+        let sortDescriptor = NSSortDescriptor(keyPath: \PlayerInjuryEntity.lastName, ascending: true)
         
-        playerInjuryEntityFetchRequest.sortDescriptors = [sort]
+        playerInjuryEntityFetchRequest.sortDescriptors = [sortDescriptor]
         
         do
         {
@@ -173,9 +173,9 @@ class DatabaseManager
     {
         var teamStatistics: [TeamStatisticsEntity] = []
         
-        let sort = NSSortDescriptor(keyPath: \TeamStatisticsEntity.abbreviation, ascending: true)
+        let sortDescriptor = NSSortDescriptor(keyPath: \TeamStatisticsEntity.abbreviation, ascending: true)
         
-        teamStatisticsFetchRequest.sortDescriptors = [sort]
+        teamStatisticsFetchRequest.sortDescriptors = [sortDescriptor]
         
         do
         {
@@ -189,7 +189,7 @@ class DatabaseManager
         return teamStatistics
     }
     
-    func scheduledGamesRequiresSaving(_ selectedDate: String) -> Bool
+    func scheduledGamesRequireSaving(_ selectedDate: String) -> Bool
     {
         // If future date, return false
         if TimeAndDateUtils.evaluateIfFutureDate(TimeAndDateUtils.getDate(fromString: selectedDate, dateFormat: "EEEE, MMM d, yyyy")!) { return false }
@@ -209,9 +209,42 @@ class DatabaseManager
         return false
     }
     
+    func playersRequireSaving() -> Bool
+    {
+        //  Retrieve all players
+        let retrievedPlayers = retrieveAllPlayers()
+        
+        //  If no players found or the last updated date was before today, return true
+        if retrievedPlayers.count == 0 || retrievedPlayers.first!.lastUpdated! < Date()
+        {
+            return true
+        }
+        
+        return false
+    }
+    
+    func teamsRequireSaving() -> Bool
+    {
+        //  Retrieve all teams
+        let retrievedTeams = retrieveAllTeams()
+        
+        //  If no teams found or the last updated date was before today, return true
+        if retrievedTeams.count == 0 || retrievedTeams.first!.lastUpdated! < Date()
+        {
+            return true
+        }
+        
+        return false
+    }
+    
     func saveScheduleEntities(_ scheduledEntities: [ScheduleEntity]) throws
     {
         ScheduleEntity().save()
+    }
+    
+    func saveTeamEntities(_ teamEntities: [TeamEntity]) throws
+    {
+        TeamEntity().save()
     }
     
     func savePlayerEntities(_ playerEntities: [PlayerEntity]) throws

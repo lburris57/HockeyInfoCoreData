@@ -115,6 +115,11 @@ struct TeamStatistics: Identifiable
         return teamStatisticsEntity.hits
     }
     
+    var faceOffs: Int16
+    {
+        return teamStatisticsEntity.faceOffs
+    }
+    
     var faceOffWins: Int16
     {
         return teamStatisticsEntity.faceOffWins

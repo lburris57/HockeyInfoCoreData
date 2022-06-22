@@ -5,13 +5,14 @@
 //  Created by Larry Burris on 2/7/22.
 //
 import Foundation
-import SwiftUI
 import CoreData
 
 struct DataConversionHelper
 {
     static let context = CoreDataManager.shared.persistentContainer.viewContext
     
+    //  Returns populated ScheduleEntity and ScheduledGame arrays from
+    //  values contained in the passed-in SeasonalGames JSON object
     static func convertSeasonToScheduleEntitiesAndScheduledGames(_ seasonalGames: SeasonalGames) -> ([ScheduleEntity], [ScheduledGame])
     {
         var scheduledEntities = [ScheduleEntity]()
@@ -49,6 +50,68 @@ struct DataConversionHelper
         return (scheduledEntities, scheduledGames)
     }
     
+    //  Returns populated TeamEntity and Team arrays from values
+    //  contained in the passed-in SeasonalTeamStats JSON object
+    static func convertSeasonalTeamStatsToTeamEntitiesAndTeams(_ seasonalTeamStats: SeasonalTeamStats) -> ([TeamEntity], [Team])
+    {
+        var teamEntities = [TeamEntity]()
+        var teamModels = [Team]()
+        
+        let teamStatsTotals = seasonalTeamStats.teamStatsTotals
+        
+        for teamStatsTotal in teamStatsTotals
+        {
+            let teamEntity = TeamEntity(context: context)
+            let teamStatisticsEntity = TeamStatisticsEntity(context: context)
+            
+            teamEntity.dateCreated = Date()
+            teamEntity.lastUpdated = seasonalTeamStats.lastUpdatedOn
+            teamEntity.abbreviation = teamStatsTotal.team.abbreviation
+            teamEntity.city = teamStatsTotal.team.city
+            teamEntity.name = teamStatsTotal.team.name
+            teamEntity.division = TeamManager.getDivisionByTeamName(teamStatsTotal.team.abbreviation)
+            teamEntity.conference = TeamManager.getConferenceByTeamName(teamStatsTotal.team.abbreviation)
+            
+            teamStatisticsEntity.dateCreated = Date()
+            teamStatisticsEntity.lastUpdated  = seasonalTeamStats.lastUpdatedOn
+            teamStatisticsEntity.abbreviation = teamStatsTotal.team.abbreviation
+            teamStatisticsEntity.gamesPlayed = Int16(teamStatsTotal.stats.gamesPlayed)
+            teamStatisticsEntity.wins = Int16(teamStatsTotal.stats.standings.wins)
+            teamStatisticsEntity.losses = Int16(teamStatsTotal.stats.standings.losses)
+            teamStatisticsEntity.overtimeWins = Int16(teamStatsTotal.stats.standings.overtimeWins)
+            teamStatisticsEntity.overtimeLosses = Int16(teamStatsTotal.stats.standings.overtimeLosses)
+            teamStatisticsEntity.points = Int16(teamStatsTotal.stats.standings.points)
+            teamStatisticsEntity.powerPlays = Int16(teamStatsTotal.stats.powerplay.powerplays)
+            teamStatisticsEntity.powerPlayGoals = Int16(teamStatsTotal.stats.powerplay.powerplayGoals)
+            teamStatisticsEntity.powerPlayPercent = teamStatsTotal.stats.powerplay.powerplayPercent
+            teamStatisticsEntity.penalties = Int16(teamStatsTotal.stats.miscellaneous.penalties)
+            teamStatisticsEntity.penaltyMinutes = Int16(teamStatsTotal.stats.miscellaneous.penaltyMinutes)
+            teamStatisticsEntity.penaltyKills = Int16(teamStatsTotal.stats.powerplay.penaltyKills)
+            teamStatisticsEntity.penaltyKillGoalsAllowed = Int16(teamStatsTotal.stats.powerplay.penaltyKillGoalsAllowed)
+            teamStatisticsEntity.penaltyKillPercent = teamStatsTotal.stats.powerplay.penaltyKillPercent
+            teamStatisticsEntity.goalsFor = Int16(teamStatsTotal.stats.miscellaneous.goalsFor)
+            teamStatisticsEntity.goalsAgainst = Int16(teamStatsTotal.stats.miscellaneous.goalsAgainst)
+            teamStatisticsEntity.shots = Int16(teamStatsTotal.stats.miscellaneous.shots)
+            teamStatisticsEntity.hits = Int16(teamStatsTotal.stats.miscellaneous.hits)
+            teamStatisticsEntity.faceOffs = Int16(teamStatsTotal.stats.faceoffs.faceoffs)
+            teamStatisticsEntity.faceOffWins = Int16(teamStatsTotal.stats.faceoffs.faceoffWins)
+            teamStatisticsEntity.faceOffLosses = Int16(teamStatsTotal.stats.faceoffs.faceoffLosses)
+            teamStatisticsEntity.faceOffPercent = teamStatsTotal.stats.faceoffs.faceoffPercent
+            
+            teamStatisticsEntity.team = teamEntity
+            teamEntity.statistics = teamStatisticsEntity
+            
+            
+            teamEntities.append(teamEntity)
+        }
+        
+        teamModels = teamEntities.map(Team.init)
+        
+        return (teamEntities, teamModels)
+    }
+    
+    //  Returns populated PlayerEntity and Player arrays from values
+    //  contained in the passed-in SeasonalPlayers JSON object
     static func convertSeasonalPlayersToPlayerEntitiesAndPlayers(_ seasonalPlayers: SeasonalPlayers) -> ([PlayerEntity], [Player])
     {
         var playerEntities = [PlayerEntity]()
