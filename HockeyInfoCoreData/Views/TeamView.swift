@@ -8,25 +8,44 @@ import SwiftUI
 
 struct TeamView: View
 {
-    let teamViewModel = TeamViewModel()
+    @StateObject var teamsViewModel = TeamsViewModel()
     
     var body: some View
     {
-        List
+        NavigationView
         {
-            ForEach(teamViewModel.teams)
+            List
             {
-                team in
-                
-                HStack
+                ForEach(teamsViewModel.teams)
                 {
-                    Image(team.abbreviation)
-                        .resizable()
-                        .frame(width: 40, height: 30)
-                        .scaledToFit()
-                    Text(team.city + " " + team.name)
+                    team in
+                    
+                    NavigationLink
+                    {
+                        Text(team.city + " " + team.name)
+                    }
+                label:
+                    {
+                        HStack
+                        {
+                            Image(team.abbreviation)
+                                .resizable()
+                                .frame(width: 40, height: 30)
+                                .scaledToFit()
+                            
+                            Text(team.city + " " + team.name)
+                        }
+                    }
+                    
                 }
             }
+            .listStyle(.plain)
+            .task
+            {
+                await teamsViewModel.fetchDataFromWebService()
+            }
+            .navigationTitle("NHL Teams")
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }

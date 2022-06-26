@@ -8,7 +8,7 @@ import Foundation
 import CoreData
 
 //  Presentation layer struct that has computed fields that
-//  return the values from the TeamStatisticsEntity database class
+//  return the values from the PlayerEntity database class
 struct Player: Identifiable
 {
     let context = CoreDataManager.shared.persistentContainer.viewContext

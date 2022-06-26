@@ -48,7 +48,6 @@
 		9132CD7A27F29E4D00AC253A /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9132CD7927F29E4D00AC253A /* Team.swift */; };
 		9132CD7C27F2A34F00AC253A /* TeamStatistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9132CD7B27F2A34F00AC253A /* TeamStatistics.swift */; };
 		9132CD7E27F2A94000AC253A /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9132CD7D27F2A94000AC253A /* Player.swift */; };
-		9132CD8027F2ADE900AC253A /* NHLScheduledGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9132CD7F27F2ADE900AC253A /* NHLScheduledGame.swift */; };
 		9132CD8227F2AEC600AC253A /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9132CD8127F2AEC600AC253A /* Venue.swift */; };
 		9132CD8827F3DE5A00AC253A /* DataConversionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9132CD8727F3DE5900AC253A /* DataConversionHelper.swift */; };
 		918CD8AF285C02DA00043790 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918CD8AD285C02DA00043790 /* MapView.swift */; };
@@ -74,6 +73,7 @@
 		91E8ADCE27EFD1F10041277F /* TeamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E8ADCA27EFD1F10041277F /* TeamView.swift */; };
 		91E8ADCF27EFD1F10041277F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E8ADCB27EFD1F10041277F /* ContentView.swift */; };
 		91E8ADD127EFD6030041277F /* TeamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E8ADD027EFD6030041277F /* TeamViewModel.swift */; };
+		91F3C5D12862A86B00243BD1 /* Neumorphic in Frameworks */ = {isa = PBXBuildFile; productRef = 91F3C5D02862A86B00243BD1 /* Neumorphic */; };
 		91FF1BCA27DC155B008ED98F /* HockeyInfoCoreDataApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FF1BC927DC155B008ED98F /* HockeyInfoCoreDataApp.swift */; };
 		91FF1BCE27DC155C008ED98F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91FF1BCD27DC155C008ED98F /* Assets.xcassets */; };
 		91FF1BD127DC155C008ED98F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91FF1BD027DC155C008ED98F /* Preview Assets.xcassets */; };
@@ -147,7 +147,6 @@
 		9132CD7927F29E4D00AC253A /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		9132CD7B27F2A34F00AC253A /* TeamStatistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamStatistics.swift; sourceTree = "<group>"; };
 		9132CD7D27F2A94000AC253A /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
-		9132CD7F27F2ADE900AC253A /* NHLScheduledGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NHLScheduledGame.swift; path = ../../../HockeyInfoDatabase/HockeyInfoDatabase/PresentationModels/NHLScheduledGame.swift; sourceTree = "<group>"; };
 		9132CD8127F2AEC600AC253A /* Venue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
 		9132CD8727F3DE5900AC253A /* DataConversionHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataConversionHelper.swift; sourceTree = "<group>"; };
 		918CD8AD285C02DA00043790 /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
@@ -209,6 +208,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91F3C5D12862A86B00243BD1 /* Neumorphic in Frameworks */,
 				919FBAEB285D6D1F00FFA7AA /* SwiftDate in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -243,7 +243,6 @@
 				9132CD7327F2965600AC253A /* PlayerInjury.swift */,
 				9132CD7527F2985C00AC253A /* PeriodScoringData.swift */,
 				9132CD7D27F2A94000AC253A /* Player.swift */,
-				9132CD7F27F2ADE900AC253A /* NHLScheduledGame.swift */,
 				9132CD8127F2AEC600AC253A /* Venue.swift */,
 			);
 			path = Models;
@@ -298,7 +297,6 @@
 				91E8ADAF27EBCC290041277F /* DivisionEnum.swift */,
 				91E8ADB027EBCC290041277F /* PeriodEnum.swift */,
 				91E8ADB127EBCC290041277F /* PositionEnum.swift */,
-				91E8ADC827EFD1F10041277F /* ScoresView.swift */,
 				91E8ADB227EBCC290041277F /* PlayingProbabilityEnum.swift */,
 			);
 			path = Enums;
@@ -340,6 +338,7 @@
 				919FBAF0285D73E000FFA7AA /* TeamStatsView.swift */,
 				91E8ADC927EFD1F10041277F /* ScheduleView.swift */,
 				91E8ADCA27EFD1F10041277F /* TeamView.swift */,
+				91E8ADC827EFD1F10041277F /* ScoresView.swift */,
 				9196F509285B056D00FF45A6 /* MainMenuView.swift */,
 				91E8ADCB27EFD1F10041277F /* ContentView.swift */,
 			);
@@ -464,6 +463,7 @@
 			name = HockeyInfoCoreData;
 			packageProductDependencies = (
 				919FBAEA285D6D1F00FFA7AA /* SwiftDate */,
+				91F3C5D02862A86B00243BD1 /* Neumorphic */,
 			);
 			productName = HockeyInfoCoreData;
 			productReference = 91FF1BC627DC155B008ED98F /* HockeyInfoCoreData.app */;
@@ -495,6 +495,7 @@
 			mainGroup = 91FF1BBD27DC155B008ED98F;
 			packageReferences = (
 				919FBAE9285D6D1F00FFA7AA /* XCRemoteSwiftPackageReference "SwiftDate" */,
+				91F3C5CF2862A86B00243BD1 /* XCRemoteSwiftPackageReference "neumorphic" */,
 			);
 			productRefGroup = 91FF1BC727DC155B008ED98F /* Products */;
 			projectDirPath = "";
@@ -552,7 +553,6 @@
 				91FF1BDB27DC16B9008ED98F /* Log.swift in Sources */,
 				9103D393285D0675008B80EC /* LeaderRow.swift in Sources */,
 				9132CD7627F2985C00AC253A /* PeriodScoringData.swift in Sources */,
-				9132CD8027F2ADE900AC253A /* NHLScheduledGame.swift in Sources */,
 				91E8ADC527EFD15E0041277F /* DatabaseErrorEnum.swift in Sources */,
 				9132CD6927F1763900AC253A /* SeasonScheduleViewModel.swift in Sources */,
 				9132CD7A27F29E4D00AC253A /* Team.swift in Sources */,
@@ -827,6 +827,14 @@
 				minimumVersion = 6.0.0;
 			};
 		};
+		91F3C5CF2862A86B00243BD1 /* XCRemoteSwiftPackageReference "neumorphic" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/costachung/neumorphic";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -834,6 +842,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 919FBAE9285D6D1F00FFA7AA /* XCRemoteSwiftPackageReference "SwiftDate" */;
 			productName = SwiftDate;
+		};
+		91F3C5D02862A86B00243BD1 /* Neumorphic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 91F3C5CF2862A86B00243BD1 /* XCRemoteSwiftPackageReference "neumorphic" */;
+			productName = Neumorphic;
 		};
 /* End XCSwiftPackageProductDependency section */
 

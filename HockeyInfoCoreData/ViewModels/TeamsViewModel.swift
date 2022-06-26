@@ -37,7 +37,11 @@ class TeamsViewModel: ObservableObject
     {
         //  URL is https://api.mysportsfeeds.com/v2.1/pull/nhl/2021-2022-regular/team_stats_totals.json
         
-        let apiService = APIService(urlString: Constants.ALL_TEAMS)
+        let urlString = Constants.REGULAR_SEASON_TEAM_STATS_URL
+        
+        Log.info("URL String is: \(urlString)")
+        
+        let apiService = APIService(urlString: urlString)
         
         isLoading.toggle()
         

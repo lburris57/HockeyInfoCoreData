@@ -10,6 +10,8 @@ import Combine
 
 final class UserSettingsViewModel: ObservableObject
 {
+    //  @AppStorage("username") var username: String = "Anonymous"
+    
     let userDefaults = UserDefaults.standard
     
     @Published var seasonType = Constants.EMPTY_STRING {didSet {userDefaults.set(self.seasonType, forKey: Constants.SEASON_TYPE)}}

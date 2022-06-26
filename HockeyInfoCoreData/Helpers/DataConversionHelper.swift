@@ -65,7 +65,7 @@ struct DataConversionHelper
             let teamStatisticsEntity = TeamStatisticsEntity(context: context)
             
             teamEntity.dateCreated = Date()
-            teamEntity.lastUpdated = seasonalTeamStats.lastUpdatedOn
+            teamEntity.lastUpdated = Date()
             teamEntity.abbreviation = teamStatsTotal.team.abbreviation
             teamEntity.city = teamStatsTotal.team.city
             teamEntity.name = teamStatsTotal.team.name
@@ -73,7 +73,7 @@ struct DataConversionHelper
             teamEntity.conference = TeamManager.getConferenceByTeamName(teamStatsTotal.team.abbreviation)
             
             teamStatisticsEntity.dateCreated = Date()
-            teamStatisticsEntity.lastUpdated  = seasonalTeamStats.lastUpdatedOn
+            teamStatisticsEntity.lastUpdated  = Date()
             teamStatisticsEntity.abbreviation = teamStatsTotal.team.abbreviation
             teamStatisticsEntity.gamesPlayed = Int16(teamStatsTotal.stats.gamesPlayed)
             teamStatisticsEntity.wins = Int16(teamStatsTotal.stats.standings.wins)

@@ -120,7 +120,7 @@ struct SeasonalTeamStats: Codable
         let teamStatReferences: [TeamStatReference]
     }
 
-    let lastUpdatedOn: Date
+    //let lastUpdatedOn: Date
     let teamStatsTotals: [TeamStatsTotal]
     let references: Reference
 }

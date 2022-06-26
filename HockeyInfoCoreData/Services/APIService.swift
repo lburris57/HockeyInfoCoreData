@@ -33,6 +33,10 @@ struct APIService
             //  Make the call to the URL with the request
             let (data, response) = try await URLSession.shared.data(for: request)
             
+            let httpResponse1 = response as? HTTPURLResponse
+            Log.info("Response is: \(httpResponse1!.statusCode)")
+            Log.info("Data is: \(data)")
+            
             //  Verify that the response is valid and the status code 200
             guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else
             {
@@ -53,6 +57,7 @@ struct APIService
             }
             catch
             {
+                Log.error("\(error)")
                 throw APIError.decodingError(error.localizedDescription)
             }
         }

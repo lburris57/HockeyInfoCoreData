@@ -229,7 +229,7 @@ class DatabaseManager
         let retrievedTeams = retrieveAllTeams()
         
         //  If no teams found or the last updated date was before today, return true
-        if retrievedTeams.count == 0 || retrievedTeams.first!.lastUpdated! < Date()
+        if retrievedTeams.count == 0 || (retrievedTeams.count > 0 && retrievedTeams.first?.lastUpdated ?? Date() < Date())
         {
             return true
         }

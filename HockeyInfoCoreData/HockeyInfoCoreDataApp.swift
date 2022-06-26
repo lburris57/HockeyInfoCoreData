@@ -15,12 +15,16 @@ struct HockeyInfoCoreDataApp: App
     {
         WindowGroup
         {
-            MainMenuView()
+            //MainMenuView()
+            TeamView()
             .environment(\.managedObjectContext, persistentContainer.viewContext)
             .onAppear
             {
                 // Disable the UIConstraint to fix bug in Apple's code
                 UserDefaults.standard.setValue(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
+                
+                TeamStatisticsEntity.deleteAll()
+                TeamEntity.deleteAll()
             }
         }
     }

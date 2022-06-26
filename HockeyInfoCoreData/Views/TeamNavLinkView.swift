@@ -8,7 +8,7 @@ import SwiftUI
 
 struct TeamNavLinkView: View
 {
-    let team: NHLTeam
+    let team: TeamDisplayData
     
     var body: some View
     {
@@ -24,13 +24,5 @@ struct TeamNavLinkView: View
                 
             }
         }
-    }
-}
-
-struct TeamNavLinkView_Previews: PreviewProvider
-{
-    static var previews: some View
-    {
-        TeamNavLinkView(team: TeamViewModel().teams[13])
     }
 }

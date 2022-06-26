@@ -48,6 +48,26 @@ extension BaseModel
         save()
     }
     
+    //  Deletes all of the existing objects in the table.
+    static func deleteAll()
+    {
+        let fetchRequest: NSFetchRequest<Self> = NSFetchRequest(entityName: String(describing: Self.self))
+        
+        do
+        {
+            let retrievedObjects = try viewContext.fetch(fetchRequest)
+            
+            for retrievedObject in retrievedObjects
+            {
+                Self.viewContext.delete(retrievedObject)
+            }
+        }
+        catch
+        {
+            Log.error("Error deleting all \(Self.self) objects: \(error.localizedDescription)")
+        }
+    }
+    
     //  Retrieve all objects without sorting
     static func all<T>() -> [T] where T: NSManagedObject
     {
