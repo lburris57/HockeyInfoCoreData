@@ -1,6 +1,6 @@
 //
 //  TeamTabView.swift
-//  HockeyInfoDatabase
+//  HockeyInfoCoreData
 //
 //  Created by Larry Burris on 2/6/22.
 //

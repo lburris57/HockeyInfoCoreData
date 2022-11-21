@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21223.11" systemVersion="22A5266r" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21279" systemVersion="22A5342f" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="GameLogEntity" representedClassName="GameLogEntity" syncable="YES">
         <attribute name="awayFaceOffLosses" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="awayFaceOffPercent" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
@@ -239,24 +239,5 @@
         <attribute name="shots" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="wins" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="team" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TeamEntity" inverseName="statistics" inverseEntity="TeamEntity"/>
-        <uniquenessConstraints>
-            <uniquenessConstraint>
-                <constraint value="comma"/>
-                <constraint value="separated"/>
-                <constraint value="properties"/>
-            </uniquenessConstraint>
-        </uniquenessConstraints>
     </entity>
-    <elements>
-        <element name="GameLogEntity" positionX="9" positionY="162" width="128" height="794"/>
-        <element name="PeriodScoringDataEntity" positionX="-9" positionY="144" width="128" height="149"/>
-        <element name="PlayerEntity" positionX="-54" positionY="45" width="128" height="329"/>
-        <element name="PlayerInjuryEntity" positionX="0" positionY="153" width="128" height="224"/>
-        <element name="PlayerStatisticsEntity" positionX="18" positionY="189" width="128" height="629"/>
-        <element name="ScheduleEntity" positionX="-36" positionY="153" width="128" height="299"/>
-        <element name="ScoringSummaryEntity" positionX="36" positionY="198" width="128" height="179"/>
-        <element name="TeamEntity" positionX="-63" positionY="-18" width="128" height="239"/>
-        <element name="TeamStandingsEntity" positionX="-18" positionY="171" width="128" height="224"/>
-        <element name="TeamStatisticsEntity" positionX="0" positionY="180" width="128" height="419"/>
-    </elements>
 </model>

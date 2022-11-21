@@ -139,7 +139,6 @@ struct DataConversionHelper
             playerEntity.position = player.player.primaryPosition
             playerEntity.shoots = player.player.handedness.shoots
             
-            
             playerEntities.append(playerEntity)
         }
         

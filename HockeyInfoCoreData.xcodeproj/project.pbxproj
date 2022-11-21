@@ -50,6 +50,8 @@
 		9132CD7E27F2A94000AC253A /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9132CD7D27F2A94000AC253A /* Player.swift */; };
 		9132CD8227F2AEC600AC253A /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9132CD8127F2AEC600AC253A /* Venue.swift */; };
 		9132CD8827F3DE5A00AC253A /* DataConversionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9132CD8727F3DE5900AC253A /* DataConversionHelper.swift */; };
+		9168D18D290388CF00069D15 /* URLHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9168D18C290388CF00069D15 /* URLHelper.swift */; };
+		9168D18F2903920800069D15 /* NHLScheduledGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9168D18E2903920800069D15 /* NHLScheduledGame.swift */; };
 		918CD8AF285C02DA00043790 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918CD8AD285C02DA00043790 /* MapView.swift */; };
 		918CD8B0285C02DA00043790 /* VenueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918CD8AE285C02DA00043790 /* VenueView.swift */; };
 		9196F50A285B056D00FF45A6 /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9196F509285B056D00FF45A6 /* MainMenuView.swift */; };
@@ -149,6 +151,8 @@
 		9132CD7D27F2A94000AC253A /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		9132CD8127F2AEC600AC253A /* Venue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
 		9132CD8727F3DE5900AC253A /* DataConversionHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataConversionHelper.swift; sourceTree = "<group>"; };
+		9168D18C290388CF00069D15 /* URLHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLHelper.swift; sourceTree = "<group>"; };
+		9168D18E2903920800069D15 /* NHLScheduledGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NHLScheduledGame.swift; sourceTree = "<group>"; };
 		918CD8AD285C02DA00043790 /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		918CD8AE285C02DA00043790 /* VenueView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueView.swift; sourceTree = "<group>"; };
 		9196F509285B056D00FF45A6 /* MainMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
@@ -234,6 +238,7 @@
 			children = (
 				9132CD3C27F14F0200AC253A /* NHLTeam.swift */,
 				9132CD6B27F2781500AC253A /* ScheduledGame.swift */,
+				9168D18E2903920800069D15 /* NHLScheduledGame.swift */,
 				9132CD7927F29E4D00AC253A /* Team.swift */,
 				9132CD7B27F2A34F00AC253A /* TeamStatistics.swift */,
 				9132CD7727F29AF000AC253A /* TeamStandings.swift */,
@@ -284,6 +289,7 @@
 		9132CD8627F3DE5900AC253A /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				9168D18C290388CF00069D15 /* URLHelper.swift */,
 				9132CD8727F3DE5900AC253A /* DataConversionHelper.swift */,
 			);
 			path = Helpers;
@@ -532,6 +538,7 @@
 				91FF1C5F27DEDF46008ED98F /* TeamStandingsEntity+CoreDataProperties.swift in Sources */,
 				91E8ADB827EBCC290041277F /* PlayingProbabilityEnum.swift in Sources */,
 				91E8ADB627EBCC290041277F /* PeriodEnum.swift in Sources */,
+				9168D18D290388CF00069D15 /* URLHelper.swift in Sources */,
 				91FF1C5627DEDF46008ED98F /* GameLogEntity+CoreDataClass.swift in Sources */,
 				9132CD5227F1588300AC253A /* SeasonalPlayers.swift in Sources */,
 				91E8ADCE27EFD1F10041277F /* TeamView.swift in Sources */,
@@ -604,6 +611,7 @@
 				911BCC04286120380010F0AD /* TextInputField.swift in Sources */,
 				91FF1C5D27DEDF46008ED98F /* PeriodScoringDataEntity+CoreDataProperties.swift in Sources */,
 				91FF1C6027DEDF46008ED98F /* TeamEntity+CoreDataClass.swift in Sources */,
+				9168D18F2903920800069D15 /* NHLScheduledGame.swift in Sources */,
 				9132CD7E27F2A94000AC253A /* Player.swift in Sources */,
 				919FBAF3285D75B000FFA7AA /* TeamRosterView.swift in Sources */,
 				919FBAF1285D73E000FFA7AA /* TeamStatsView.swift in Sources */,

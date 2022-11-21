@@ -1,6 +1,6 @@
 //
 //  DivisionTeamView.swift
-//  HockeyInfoDatabase
+//  HockeyInfoCoreData
 //
 //  Created by Larry Burris on 1/31/22.
 //
@@ -20,45 +20,45 @@ struct DivisionTeamView: View
                 {
                     Section(teamViewModel.divisions[0])
                     {
-                        ForEach(teamViewModel.atlanticDivisionTeams)
-                        {
-                            team in
-                        
-                            TeamNavLinkView(team: team)
-                        }
+//                        ForEach(teamViewModel.atlanticDivisionTeams)
+//                        {
+//                            team in
+//
+//                            TeamNavLinkView(team: team)
+//                        }
 
                     }
                     
                     Section(teamViewModel.divisions[1])
                     {
-                        ForEach(teamViewModel.metropolitanDivisionTeams)
-                        {
-                            team in
-                        
-                            TeamNavLinkView(team: team)
-                        }
+//                        ForEach(teamViewModel.metropolitanDivisionTeams)
+//                        {
+//                            team in
+//
+//                            TeamNavLinkView(team: team)
+//                        }
 
                     }
                     
                     Section(teamViewModel.divisions[2])
                     {
-                        ForEach(teamViewModel.centralDivisionTeams)
-                        {
-                            team in
-                        
-                            TeamNavLinkView(team: team)
-                        }
+//                        ForEach(teamViewModel.centralDivisionTeams)
+//                        {
+//                            team in
+//
+//                            TeamNavLinkView(team: team)
+//                        }
 
                     }
                     
                     Section(teamViewModel.divisions[3])
                     {
-                        ForEach(teamViewModel.pacificDivisionTeams)
-                        {
-                            team in
-                        
-                            TeamNavLinkView(team: team)
-                        }
+//                        ForEach(teamViewModel.pacificDivisionTeams)
+//                        {
+//                            team in
+//                        
+//                            TeamNavLinkView(team: team)
+//                        }
 
                     }
                 }.listStyle(.plain)

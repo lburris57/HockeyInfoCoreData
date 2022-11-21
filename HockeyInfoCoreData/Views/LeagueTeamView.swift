@@ -18,12 +18,12 @@ struct LeagueTeamView: View
             {
                 List
                 {
-                    ForEach(teamViewModel.teams)
-                    {
-                        team in
-                    
-                        TeamNavLinkView(team: team)
-                    }
+//                    ForEach(teamViewModel.teams)
+//                    {
+//                        team in
+//                    
+//                        TeamNavLinkView(team: team)
+//                    }
 
                 }.listStyle(.plain)
                 

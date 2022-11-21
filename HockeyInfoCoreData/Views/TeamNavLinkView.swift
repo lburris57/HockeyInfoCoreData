@@ -8,21 +8,22 @@ import SwiftUI
 
 struct TeamNavLinkView: View
 {
-    let team: TeamDisplayData
-    
+//    let team: TeamDisplayData
+//
     var body: some View
     {
-        NavigationLink(destination: Text(team.city + " " + team.name + " roster goes here..."))
-        {
-            HStack
-            {
-                Image(team.abbreviation)
-                    .resizable()
-                    .frame(width: 40, height: 30)
-                    .scaledToFit()
-                Text(team.city + " " + team.name)
-                
-            }
-        }
+//        NavigationLink(destination: Text(team.city + " " + team.name + " roster goes here..."))
+//        {
+//            HStack
+//            {
+//                Image(team.abbreviation)
+//                    .resizable()
+//                    .frame(width: 40, height: 30)
+//                    .scaledToFit()
+//                Text(team.city + " " + team.name)
+//
+//            }
+//        }
+        Text("TeamNavLinkView")
     }
 }

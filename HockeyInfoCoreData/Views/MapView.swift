@@ -1,6 +1,6 @@
 //
 //  MapView.swift
-//  HockeyInfoSwiftUI
+//  HockeyInfoCoreData
 //
 //  Created by Larry Burris on 6/30/19.
 //  Copyright © 2019 Larry Burris. All rights reserved.

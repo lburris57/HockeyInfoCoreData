@@ -1,6 +1,6 @@
 //
 //  ConferenceTeamView.swift
-//  HockeyInfoDatabase
+//  HockeyInfoCoreData
 //
 //  Created by Larry Burris on 2/6/22.
 //
@@ -21,23 +21,23 @@ struct ConferenceTeamView: View
                 {
                     Section(teamViewModel.conferences[0])
                     {
-                        ForEach(teamViewModel.easternConferenceTeams)
-                        {
-                            team in
-                        
-                            TeamNavLinkView(team: team)
-                        }
+//                        ForEach(teamViewModel.easternConferenceTeams)
+//                        {
+//                            team in
+//
+//                            TeamNavLinkView(team: team)
+//                        }
 
                     }
                     
                     Section(teamViewModel.conferences[1])
                     {
-                        ForEach(teamViewModel.westernConferenceTeams)
-                        {
-                            team in
-                        
-                            TeamNavLinkView(team: team)
-                        }
+//                        ForEach(teamViewModel.westernConferenceTeams)
+//                        {
+//                            team in
+//                        
+//                            TeamNavLinkView(team: team)
+//                        }
 
                     }
                 }.listStyle(.plain)
