@@ -76,6 +76,7 @@
 		91E8ADCF27EFD1F10041277F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E8ADCB27EFD1F10041277F /* ContentView.swift */; };
 		91E8ADD127EFD6030041277F /* TeamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E8ADD027EFD6030041277F /* TeamViewModel.swift */; };
 		91F3C5D12862A86B00243BD1 /* Neumorphic in Frameworks */ = {isa = PBXBuildFile; productRef = 91F3C5D02862A86B00243BD1 /* Neumorphic */; };
+		91FCB18829456DB600E0E022 /* FilteredList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FCB18729456DB600E0E022 /* FilteredList.swift */; };
 		91FF1BCA27DC155B008ED98F /* HockeyInfoCoreDataApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FF1BC927DC155B008ED98F /* HockeyInfoCoreDataApp.swift */; };
 		91FF1BCE27DC155C008ED98F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91FF1BCD27DC155C008ED98F /* Assets.xcassets */; };
 		91FF1BD127DC155C008ED98F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91FF1BD027DC155C008ED98F /* Preview Assets.xcassets */; };
@@ -175,6 +176,7 @@
 		91E8ADCA27EFD1F10041277F /* TeamView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamView.swift; sourceTree = "<group>"; };
 		91E8ADCB27EFD1F10041277F /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		91E8ADD027EFD6030041277F /* TeamViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamViewModel.swift; sourceTree = "<group>"; };
+		91FCB18729456DB600E0E022 /* FilteredList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteredList.swift; sourceTree = "<group>"; };
 		91FF1BC627DC155B008ED98F /* HockeyInfoCoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HockeyInfoCoreData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91FF1BC927DC155B008ED98F /* HockeyInfoCoreDataApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HockeyInfoCoreDataApp.swift; sourceTree = "<group>"; };
 		91FF1BCD27DC155C008ED98F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -347,6 +349,7 @@
 				91E8ADC827EFD1F10041277F /* ScoresView.swift */,
 				9196F509285B056D00FF45A6 /* MainMenuView.swift */,
 				91E8ADCB27EFD1F10041277F /* ContentView.swift */,
+				91FCB18729456DB600E0E022 /* FilteredList.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -611,6 +614,7 @@
 				911BCC04286120380010F0AD /* TextInputField.swift in Sources */,
 				91FF1C5D27DEDF46008ED98F /* PeriodScoringDataEntity+CoreDataProperties.swift in Sources */,
 				91FF1C6027DEDF46008ED98F /* TeamEntity+CoreDataClass.swift in Sources */,
+				91FCB18829456DB600E0E022 /* FilteredList.swift in Sources */,
 				9168D18F2903920800069D15 /* NHLScheduledGame.swift in Sources */,
 				9132CD7E27F2A94000AC253A /* Player.swift in Sources */,
 				919FBAF3285D75B000FFA7AA /* TeamRosterView.swift in Sources */,

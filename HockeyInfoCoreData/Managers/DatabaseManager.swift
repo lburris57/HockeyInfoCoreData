@@ -45,7 +45,7 @@ class DatabaseManager
     /*
         This is a list of functions that need to be included in the DatabaseManager code:
      
-        saveScheduleEntities(_ scheduledEntities: [ScheduleEntity], )
+        saveScheduleEntities(_ scheduledEntities: [ScheduleEntity])
         retrieveFullSeasonSchedule() -> [ScheduleEntity]
         retrieveScheduleEntitiesByDate(_ date: Date) -> [ScheduleEntity]
         retrieveScheduleEntitiesByDateRange(_ beginDate: Date, endDate: Date) -> [ScheduleEntity]
